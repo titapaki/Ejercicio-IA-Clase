@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="IA y Ética Científica", layout="wide")
 
-# ---------- ESTILO VISUAL ----------
+# ---------- ESTILO ----------
 st.markdown("""
 <style>
 
@@ -42,80 +42,75 @@ body {
     background-color:#fafafa;
 }
 
-.nav-buttons{
-    margin-top:30px;
-}
-
 </style>
 """, unsafe_allow_html=True)
-
 
 # ---------- ESTADO ----------
 if "page" not in st.session_state:
     st.session_state.page = 1
 
-
 # ---------- PROGRESO ----------
 progress = st.session_state.page / 3
 st.progress(progress)
-
 
 # ---------- TITULO ----------
 st.markdown(
 """
 <div class="main-title">
-Dimensión Ética y Normativa del Uso de la Inteligencia Artificial en la Investigación Científica
+La Brújula Ética: ¿Cómo la Inteligencia Artificial está Redibujando la Ciencia?
 </div>
-""", unsafe_allow_html=True)
+""",
+unsafe_allow_html=True
+)
 
 st.markdown(
 """
 <div class="quote">
 "La inteligencia artificial es una brújula extraordinaria, pero solo el juicio humano puede decidir hacia qué horizonte navegar."
 </div>
-""", unsafe_allow_html=True)
+""",
+unsafe_allow_html=True
+)
 
-
-# ---------- PAGINA 1 ----------
+# ---------- PAGINA 1 : ARTICULO ----------
 if st.session_state.page == 1:
 
-    st.markdown('<div class="section-title">1. El inicio de una nueva ciencia</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Artículo de divulgación</div>', unsafe_allow_html=True)
 
     st.markdown("""
     <div class="card text-body">
 
-    En los últimos años, la Inteligencia Artificial ha dejado de ser una fantasía de la ciencia ficción para convertirse en una herramienta cotidiana dentro de universidades y laboratorios.
+En los últimos años, la Inteligencia Artificial (IA) ha dejado de ser una fantasía de las películas de ciencia ficción para convertirse en un asistente cotidiano en los laboratorios y universidades. Sin embargo, su entrada en el mundo de la investigación científica no es solo una cuestión de "hacer las cosas más rápido"; es una revolución que nos obliga a repensar qué es ético y qué no cuando buscamos el conocimiento.
 
-    Su impacto no se limita a acelerar cálculos o automatizar tareas. La IA está cambiando la forma en que los científicos observan el mundo. Gracias a su capacidad de analizar enormes cantidades de datos, permite descubrir patrones que antes eran invisibles.
+Imagine que un investigador tiene frente a sí una montaña de datos que le tomaría años analizar. Hoy, gracias a la IA, esa tarea puede resolverse en días. Como explica Barradas Gudiño (2023), esta tecnología funciona como un "elemento transformador" que dota a los equipos de una capacidad de procesamiento similar a la humana, pero a una escala masiva.
 
-    Sin embargo, este poder tecnológico también abre preguntas profundas. ¿Podemos confiar plenamente en decisiones generadas por algoritmos? ¿Quién es responsable de los resultados producidos por una máquina?
+Esta madurez tecnológica está permitiendo que científicos de todo el mundo colaboren y descubran patrones que antes eran invisibles (González Ciriaco & Medina Marín, 2023; Muñoz García et al., 2025). Es, en esencia, una nueva forma de mirar el mundo a través de lentes digitales mucho más potentes.
 
-    Estas preguntas marcan el inicio de una nueva conversación sobre la ética en la ciencia contemporánea.
+La IA no solo hace cálculos. Según Ruiz Muñoz (2024), estas herramientas ayudan desde el principio: pueden sugerir ideas (hipótesis) o encontrar conexiones inesperadas en estudios sociales o médicos. Incluso en investigaciones donde se entrevistan personas, la IA puede transcribir y organizar las charlas de forma casi instantánea, permitiendo que el científico se concentre en lo más importante: entender el significado de lo que la gente dice (Lopezosa, Goyanes, & Codina, 2024).
+
+No todo es perfecto. Uno de los mayores riesgos es lo que los expertos llaman la "caja negra". Esto significa que a veces la IA llega a una conclusión, pero no sabemos cómo lo hizo (Ruiz Muñoz, 2024). Además, si alimentamos a la IA con datos que contienen prejuicios humanos (por ejemplo, ideas sexistas o racistas), la máquina simplemente repetirá y aumentará esos errores. Por eso, existe una obligación moral de vigilar cada paso de la tecnología para asegurar que los resultados sean justos y válidos (Muñoz García et al., 2025).
+
+Esta es una de las preguntas más polémicas. La respuesta actual es un no rotundo. La comunidad académica coincide en que solo los seres humanos pueden ser considerados "autores". ¿Por qué? Porque una máquina no tiene conciencia ni puede hacerse responsable legal o éticamente de lo que escribe (Camus Jansson, 2024). La IA puede ser una "aliada", pero el control final y el juicio crítico deben permanecer siempre en manos humanas (González Ciriaco & Medina Marín, 2023). En campos como la psicología, esto es vital: una IA puede simular procesos de memoria, pero nunca podrá sustituir la interpretación profunda de un profesional sobre la mente humana (González, 2025).
+
+Para que la ciencia siga siendo confiable, el uso de la IA debe guiarse por la transparencia. Los investigadores deben declarar siempre cuándo y cómo usaron estas herramientas (Gómez Cárdenas et al., 2024).
+
+En conclusión, la IA es una brújula poderosa, pero somos los humanos quienes debemos decidir el rumbo. Solo con una supervisión constante y un compromiso con la honestidad académica podremos aprovechar esta tecnología sin perder la esencia de la ciencia: la búsqueda de la verdad con integridad (Lopezosa & Goyanes, 2024).
 
     </div>
     """, unsafe_allow_html=True)
 
 
-# ---------- PAGINA 2 ----------
+# ---------- PAGINA 2 : OPINION ----------
 elif st.session_state.page == 2:
 
-    st.markdown('<div class="section-title">2. Un debate ético abierto</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Participa en el debate</div>', unsafe_allow_html=True)
 
     st.markdown("""
     <div class="card text-body">
-
-    Uno de los principales problemas en el uso de inteligencia artificial es el fenómeno conocido como la "caja negra".
-
-    En muchos casos, los algoritmos producen resultados sin que los investigadores comprendan completamente el proceso que llevó a esa conclusión.
-
-    Además, si los datos utilizados contienen sesgos sociales, la IA puede reproducirlos o incluso amplificarlos.
-
-    Por esta razón, la comunidad científica insiste en que el uso de estas herramientas debe estar siempre acompañado por supervisión humana y transparencia metodológica.
-
+    El uso de inteligencia artificial en la investigación científica abre preguntas profundas sobre ética, responsabilidad y autoría académica.
+    Tu opinión también forma parte de esta conversación.
     </div>
     """, unsafe_allow_html=True)
-
-    st.markdown("### Participa en el debate")
 
     opinion = st.radio(
         "¿Crees que la inteligencia artificial debería poder ser considerada autora de artículos científicos?",
@@ -123,38 +118,46 @@ elif st.session_state.page == 2:
     )
 
     if opinion == "No":
-        st.success("Esta es la postura predominante dentro de la comunidad científica actual.")
+        st.success("Esta es actualmente la postura predominante en la comunidad científica.")
 
     elif opinion == "Sí":
-        st.info("Algunos investigadores discuten esta posibilidad como un cambio futuro en la ciencia.")
+        st.info("Algunos investigadores consideran que en el futuro podría replantearse este concepto.")
 
     elif opinion == "No estoy seguro":
-        st.warning("La discusión continúa evolucionando conforme avanza la tecnología.")
+        st.warning("Es un debate que continúa evolucionando con el desarrollo de la tecnología.")
 
 
-# ---------- PAGINA 3 ----------
+# ---------- PAGINA 3 : REFERENCIAS ----------
 elif st.session_state.page == 3:
 
-    st.markdown('<div class="section-title">3. Referencias</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Referencias</div>', unsafe_allow_html=True)
 
     with st.expander("Barradas Gudiño (2023)"):
-        st.write("Explora cómo la IA está transformando la investigación científica al ampliar la capacidad de análisis de datos.")
+        st.write("Describe la inteligencia artificial como un elemento transformador que amplía la capacidad de análisis de datos y acelera los procesos de investigación científica.")
 
     with st.expander("Camus Jansson (2024)"):
-        st.write("Analiza los dilemas éticos relacionados con la autoría científica en el contexto de la IA.")
+        st.write("Analiza los dilemas éticos relacionados con la autoría científica cuando se utilizan sistemas de inteligencia artificial.")
 
     with st.expander("Gómez Cárdenas et al. (2024)"):
-        st.write("Propone principios éticos para el uso responsable de inteligencia artificial en educación e investigación.")
+        st.write("Explora los principios éticos y morales necesarios para el uso responsable de inteligencia artificial en educación e investigación.")
 
     with st.expander("González Ciriaco & Medina Marín (2023)"):
-        st.write("Describe avances y desafíos éticos en la producción científica mediada por IA.")
+        st.write("Examina los avances y desafíos éticos derivados de la integración de IA en la producción científica.")
+
+    with st.expander("González (2025)"):
+        st.write("Presenta estrategias para incorporar herramientas de inteligencia artificial en la investigación psicológica.")
+
+    with st.expander("Lopezosa, Goyanes & Codina (2024)"):
+        st.write("Analiza cómo la IA puede acelerar procesos de investigación cualitativa como la transcripción y organización de entrevistas.")
+
+    with st.expander("Lopezosa & Goyanes (2024)"):
+        st.write("Evalúa el uso ético de ChatGPT y modelos de lenguaje en la investigación científica.")
 
     with st.expander("Muñoz García et al. (2025)"):
-        st.write("Analiza el impacto global de la inteligencia artificial en la producción científica.")
+        st.write("Explora el impacto global de la inteligencia artificial en la producción científica contemporánea.")
 
     with st.expander("Ruiz Muñoz (2024)"):
-        st.write("Reflexiona sobre las implicaciones metodológicas del uso de IA en investigación.")
-
+        st.write("Reflexiona sobre las implicaciones metodológicas del uso de IA y el problema de la 'caja negra' en la investigación.")
 
 # ---------- NAVEGACION ----------
 st.markdown("---")
