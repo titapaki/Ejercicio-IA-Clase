@@ -74,25 +74,34 @@ st.markdown("""
 
 
 # ---------- PAGINA 1 ----------
+# ---------- PAGINA 1 : ARTICULO ----------
 if st.session_state.page == 1:
 
     st.markdown('<div class="section-title">Artículo de divulgación</div>', unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="card text-body">
+    article_text = """
+La Brújula Ética: ¿Cómo la Inteligencia Artificial está Redibujando la Ciencia?
 
-En los últimos años, la Inteligencia Artificial (IA) ha dejado de ser una fantasía de las películas de ciencia ficción para convertirse en un asistente cotidiano en los laboratorios y universidades.
+En los últimos años, la Inteligencia Artificial (IA) ha dejado de ser una fantasía de las películas de ciencia ficción para convertirse en un asistente cotidiano en los laboratorios y universidades. Sin embargo, su entrada en el mundo de la investigación científica no es solo una cuestión de "hacer las cosas más rápido"; es una revolución que nos obliga a repensar qué es ético y qué no cuando buscamos el conocimiento.
 
-Su entrada en la investigación científica no solo significa hacer las cosas más rápido, sino replantear qué es ético cuando buscamos conocimiento.
+Imagine que un investigador tiene frente a sí una montaña de datos que le tomaría años analizar. Hoy, gracias a la IA, esa tarea puede resolverse en días. Como explica Barradas Gudiño (2023), esta tecnología funciona como un "elemento transformador" que dota a los equipos de una capacidad de procesamiento similar a la humana, pero a una escala masiva.
 
-Imagine que un investigador tiene frente a sí una montaña de datos que le tomaría años analizar. Hoy, gracias a la IA, esa tarea puede resolverse en días.
+Esta madurez tecnológica está permitiendo que científicos de todo el mundo colaboren y descubran patrones que antes eran invisibles (González Ciriaco & Medina Marín, 2023; Muñoz García et al., 2025). Es, en esencia, una nueva forma de mirar el mundo a través de lentes digitales mucho más potentes.
 
-Esta tecnología permite descubrir patrones invisibles y abrir nuevas formas de comprender el mundo científico.
+La IA no solo hace cálculos. Según Ruiz Muñoz (2024), estas herramientas ayudan desde el principio: pueden sugerir ideas (hipótesis) o encontrar conexiones inesperadas en estudios sociales o médicos. Incluso en investigaciones donde se entrevistan personas, la IA puede transcribir y organizar las charlas de forma casi instantánea, permitiendo que el científico se concentre en lo más importante: entender el significado de lo que la gente dice (Lopezosa, Goyanes, & Codina, 2024).
 
-Sin embargo, también plantea preguntas profundas sobre responsabilidad, transparencia y ética en la investigación.
+No todo es perfecto. Uno de los mayores riesgos es lo que los expertos llaman la "caja negra". Esto significa que a veces la IA llega a una conclusión, pero no sabemos cómo lo hizo (Ruiz Muñoz, 2024). Además, si alimentamos a la IA con datos que contienen prejuicios humanos (por ejemplo, ideas sexistas o racistas), la máquina simplemente repetirá y aumentará esos errores. Por eso, existe una obligación moral de vigilar cada paso de la tecnología para asegurar que los resultados sean justos y válidos (Muñoz García et al., 2025).
 
-    </div>
-    """, unsafe_allow_html=True)
+Esta es una de las preguntas más polémicas. La respuesta actual es un no rotundo. La comunidad académica coincide en que solo los seres humanos pueden ser considerados "autores". ¿Por qué? Porque una máquina no tiene conciencia ni puede hacerse responsable legal o éticamente de lo que escribe (Camus Jansson, 2024). La IA puede ser una "aliada", pero el control final y el juicio crítico deben permanecer siempre en manos humanas (González Ciriaco & Medina Marín, 2023). En campos como la psicología, esto es vital: una IA puede simular procesos de memoria, pero nunca podrá sustituir la interpretación profunda de un profesional sobre la mente humana (González, 2025).
+
+Para que la ciencia siga siendo confiable, el uso de la IA debe guiarse por la transparencia. Los investigadores deben declarar siempre cuándo y cómo usaron estas herramientas (Gómez Cárdenas et al., 2024).
+
+En conclusión, la IA es una brújula poderosa, pero somos los humanos quienes debemos decidir el rumbo. Solo con una supervisión constante y un compromiso con la honestidad académica podremos aprovechar esta tecnología sin perder la esencia de la ciencia: la búsqueda de la verdad con integridad (Lopezosa & Goyanes, 2024).
+"""
+
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.markdown(article_text)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 # ---------- PAGINA 2 ----------
