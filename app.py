@@ -1,155 +1,172 @@
 import streamlit as st
 
-st.set_page_config(page_title="Dimensión Ética de la IA", layout="wide")
+st.set_page_config(page_title="IA y Ética Científica", layout="wide")
 
-# ---------- ESTILOS ----------
+# ---------- ESTILO VISUAL ----------
 st.markdown("""
 <style>
 
+body {
+    font-family: 'Georgia', serif;
+}
+
 .main-title{
-    font-size:36px;
-    font-weight:600;
+    font-size:48px;
+    font-weight:700;
     margin-bottom:10px;
 }
 
 .quote{
     text-align:right;
     font-style:italic;
-    color:#555;
-    margin-bottom:30px;
-}
-
-.article-box{
-    border:1px solid #e6e6e6;
-    border-radius:18px;
-    padding:30px;
-    background-color:#fafafa;
-    line-height:1.7;
-    font-size:16px;
+    font-size:20px;
+    color:#666;
+    margin-bottom:40px;
 }
 
 .section-title{
-    font-size:26px;
-    font-weight:500;
-    margin-top:10px;
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.text-body{
+    font-size:19px;
+    line-height:1.8;
+}
+
+.card{
+    border:1px solid #e6e6e6;
+    border-radius:20px;
+    padding:40px;
+    background-color:#fafafa;
+}
+
+.nav-buttons{
+    margin-top:30px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
 
-# ---------- ESTADO DE PAGINA ----------
+# ---------- ESTADO ----------
 if "page" not in st.session_state:
     st.session_state.page = 1
 
 
+# ---------- PROGRESO ----------
+progress = st.session_state.page / 3
+st.progress(progress)
+
+
 # ---------- TITULO ----------
 st.markdown(
-    '<div class="main-title">Dimensión Ética y Normativa del Uso de la Inteligencia Artificial en la Investigación Científica</div>',
-    unsafe_allow_html=True
-)
+"""
+<div class="main-title">
+Dimensión Ética y Normativa del Uso de la Inteligencia Artificial en la Investigación Científica
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown(
-    '<div class="quote">La inteligencia artificial es una brújula extraordinaria, pero solo el juicio humano puede decidir hacia qué horizonte navegar.</div>',
-    unsafe_allow_html=True
-)
+"""
+<div class="quote">
+"La inteligencia artificial es una brújula extraordinaria, pero solo el juicio humano puede decidir hacia qué horizonte navegar."
+</div>
+""", unsafe_allow_html=True)
 
 
-# ---------- PAGINA 1: ARTICULO ----------
+# ---------- PAGINA 1 ----------
 if st.session_state.page == 1:
 
-    st.markdown('<div class="section-title">Artículo de divulgación</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">1. El inicio de una nueva ciencia</div>', unsafe_allow_html=True)
 
     st.markdown("""
-    <div class="article-box">
+    <div class="card text-body">
 
-    En los últimos años, la Inteligencia Artificial (IA) ha dejado de ser una fantasía de las películas de ciencia ficción para convertirse en un asistente cotidiano en los laboratorios y universidades. Su llegada al mundo de la investigación científica no solo significa hacer las cosas más rápido, sino replantear qué es ético cuando buscamos conocimiento.
+    En los últimos años, la Inteligencia Artificial ha dejado de ser una fantasía de la ciencia ficción para convertirse en una herramienta cotidiana dentro de universidades y laboratorios.
 
-    Imagine que un investigador tiene frente a sí una enorme cantidad de datos que tardaría años en analizar. Gracias a la IA, esta tarea puede resolverse en días. Estas herramientas pueden identificar patrones invisibles para el ojo humano y ayudar a generar hipótesis o descubrir conexiones inesperadas entre estudios.
+    Su impacto no se limita a acelerar cálculos o automatizar tareas. La IA está cambiando la forma en que los científicos observan el mundo. Gracias a su capacidad de analizar enormes cantidades de datos, permite descubrir patrones que antes eran invisibles.
 
-    Sin embargo, el uso de la IA también plantea desafíos importantes. Uno de los principales riesgos es el fenómeno conocido como la "caja negra". Esto ocurre cuando un sistema de IA llega a conclusiones sin que sepamos exactamente cómo lo hizo.
+    Sin embargo, este poder tecnológico también abre preguntas profundas. ¿Podemos confiar plenamente en decisiones generadas por algoritmos? ¿Quién es responsable de los resultados producidos por una máquina?
 
-    Además, si los datos utilizados contienen prejuicios humanos, la IA puede amplificarlos. Por ello, es indispensable una supervisión constante por parte de los investigadores.
-
-    En conclusión, la inteligencia artificial representa una herramienta poderosa para el avance del conocimiento, pero el juicio crítico y la responsabilidad ética deben permanecer siempre en manos humanas.
+    Estas preguntas marcan el inicio de una nueva conversación sobre la ética en la ciencia contemporánea.
 
     </div>
     """, unsafe_allow_html=True)
 
 
-# ---------- PAGINA 2: OPINION ----------
+# ---------- PAGINA 2 ----------
 elif st.session_state.page == 2:
 
-    st.markdown('<div class="section-title">Tu opinión</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">2. Un debate ético abierto</div>', unsafe_allow_html=True)
 
     st.markdown("""
-    <div class="article-box">
-    La integración de la inteligencia artificial en la investigación científica abre preguntas importantes sobre responsabilidad, ética y autoría.  
-    Tu perspectiva también forma parte de este debate.
+    <div class="card text-body">
+
+    Uno de los principales problemas en el uso de inteligencia artificial es el fenómeno conocido como la "caja negra".
+
+    En muchos casos, los algoritmos producen resultados sin que los investigadores comprendan completamente el proceso que llevó a esa conclusión.
+
+    Además, si los datos utilizados contienen sesgos sociales, la IA puede reproducirlos o incluso amplificarlos.
+
+    Por esta razón, la comunidad científica insiste en que el uso de estas herramientas debe estar siempre acompañado por supervisión humana y transparencia metodológica.
+
     </div>
     """, unsafe_allow_html=True)
+
+    st.markdown("### Participa en el debate")
 
     opinion = st.radio(
         "¿Crees que la inteligencia artificial debería poder ser considerada autora de artículos científicos?",
-        ["Sí", "No", "No estoy seguro"]
+        ["No", "Sí", "No estoy seguro"]
     )
 
-    if opinion == "Sí":
-        st.info("Algunos investigadores discuten esta posibilidad, aunque actualmente la comunidad científica no la reconoce como autora.")
+    if opinion == "No":
+        st.success("Esta es la postura predominante dentro de la comunidad científica actual.")
 
-    elif opinion == "No":
-        st.success("Esta es la postura predominante en la comunidad académica actual.")
+    elif opinion == "Sí":
+        st.info("Algunos investigadores discuten esta posibilidad como un cambio futuro en la ciencia.")
 
     elif opinion == "No estoy seguro":
-        st.warning("Es un debate abierto que seguirá evolucionando con el desarrollo tecnológico.")
+        st.warning("La discusión continúa evolucionando conforme avanza la tecnología.")
 
 
-# ---------- PAGINA 3: REFERENCIAS ----------
+# ---------- PAGINA 3 ----------
 elif st.session_state.page == 3:
 
-    st.markdown('<div class="section-title">Referencias</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">3. Referencias</div>', unsafe_allow_html=True)
 
-    with st.expander("Barradas Gudiño (2023) – Inteligencia artificial como elemento transformador de la investigación científica"):
-        st.write("Analiza cómo la IA amplía la capacidad de procesamiento de datos en la investigación científica.")
+    with st.expander("Barradas Gudiño (2023)"):
+        st.write("Explora cómo la IA está transformando la investigación científica al ampliar la capacidad de análisis de datos.")
 
-    with st.expander("Camus Jansson (2024) – El Desafío Ético de la IA en la Autoría Científica"):
-        st.write("Discute los dilemas éticos sobre la autoría científica cuando se utilizan herramientas de inteligencia artificial.")
+    with st.expander("Camus Jansson (2024)"):
+        st.write("Analiza los dilemas éticos relacionados con la autoría científica en el contexto de la IA.")
 
-    with st.expander("Gómez Cárdenas et al. (2024) – Uso ético y moral de la IA en educación e investigación"):
-        st.write("Explora principios de transparencia y responsabilidad en el uso de IA en contextos académicos.")
+    with st.expander("Gómez Cárdenas et al. (2024)"):
+        st.write("Propone principios éticos para el uso responsable de inteligencia artificial en educación e investigación.")
 
-    with st.expander("González Ciriaco & Medina Marín (2023) – Avances y desafíos éticos en la producción científica"):
-        st.write("Estudia los beneficios y desafíos éticos derivados del uso de IA en la producción científica.")
+    with st.expander("González Ciriaco & Medina Marín (2023)"):
+        st.write("Describe avances y desafíos éticos en la producción científica mediada por IA.")
 
-    with st.expander("González (2025) – Cómo hacer investigación psicológica con inteligencia artificial"):
-        st.write("Propone estrategias para integrar herramientas de IA en la investigación psicológica.")
+    with st.expander("Muñoz García et al. (2025)"):
+        st.write("Analiza el impacto global de la inteligencia artificial en la producción científica.")
 
-    with st.expander("Lopezosa, Goyanes & Codina (2024) – Acelerando la investigación cualitativa con IA"):
-        st.write("Describe cómo la IA puede apoyar el análisis de entrevistas y datos cualitativos.")
-
-    with st.expander("Lopezosa & Goyanes (2024) – Evaluación del uso ético de ChatGPT en investigación científica"):
-        st.write("Analiza el uso de modelos de lenguaje en investigación científica.")
-
-    with st.expander("Muñoz García et al. (2025) – Impacto de la inteligencia artificial en la producción científica"):
-        st.write("Examina el impacto global de la IA en la producción científica.")
-
-    with st.expander("Ruiz Muñoz (2024) – Implicaciones de la IA en la metodología de investigación"):
-        st.write("Reflexiona sobre los cambios metodológicos generados por el uso de inteligencia artificial.")
+    with st.expander("Ruiz Muñoz (2024)"):
+        st.write("Reflexiona sobre las implicaciones metodológicas del uso de IA en investigación.")
 
 
-# ---------- BOTONES DE NAVEGACION ----------
+# ---------- NAVEGACION ----------
 st.markdown("---")
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns([1,2,1])
 
 with col1:
-    if st.button("Artículo"):
-        st.session_state.page = 1
-
-with col2:
-    if st.button("Opinión"):
-        st.session_state.page = 2
+    if st.button("⬅ Anterior"):
+        if st.session_state.page > 1:
+            st.session_state.page -= 1
 
 with col3:
-    if st.button("Referencias"):
-        st.session_state.page = 3
+    if st.button("Siguiente ➜"):
+        if st.session_state.page < 3:
+            st.session_state.page += 1
